@@ -1,9 +1,13 @@
-import { Text, View } from 'react-native'
+import products from '#/data/products'
+import { Card } from '@/components/Card'
+import { FlatList, StatusBar } from 'react-native'
 
 export default function HomeView() {
   return (
-    <View className="flex-1 bg-white">
-      <Text>Home</Text>
-    </View>
+    <FlatList
+      style={{ marginTop: StatusBar.currentHeight }}
+      data={products}
+      renderItem={({ item, index }) => <Card key={index} product={item} />}
+    />
   )
 }
