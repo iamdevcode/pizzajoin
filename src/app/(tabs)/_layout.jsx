@@ -1,30 +1,32 @@
-import { MaterialIcons } from '@expo/vector-icons'
+import { tabs_routes } from '#/constants/tabs_routes'
+import { colors } from '#/constants/theme/colors'
 import { Tabs } from 'expo-router'
 
 export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
-        headerShown: false,
         tabBarLabelStyle: {
           color: '#fff',
           fontSize: 12
         },
         tabBarStyle: {
-          backgroundColor: '#2f95dc',
+          backgroundColor: colors.primary,
           borderTopWidth: 0
         }
       }}
     >
-      <Tabs.Screen
-        name="index"
-        options={{
-          tabBarLabel: 'Order',
-          tabBarIcon: () => (
-            <MaterialIcons name="restaurant-menu" size={24} color="#fff" />
-          )
-        }}
-      />
+      {tabs_routes.map(({ name, tabBarLabel, title, icon }, i) => (
+        <Tabs.Screen
+          key={i}
+          name={name}
+          options={{
+            tabBarLabel,
+            title,
+            tabBarIcon: () => icon
+          }}
+        />
+      ))}
     </Tabs>
   )
 }

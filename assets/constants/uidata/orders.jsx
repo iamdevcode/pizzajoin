@@ -3,7 +3,7 @@ import products from './products'
 
 const now = dayjs()
 
-const orders = [
+export const orders = [
   {
     id: 23123,
     created_at: now.subtract(1, 'hour').toISOString(),
@@ -80,5 +80,3 @@ const orders = [
     ]
   }
 ]
-
-export default orders

@@ -1,7 +1,7 @@
-const products = [
+export const products = [
   {
     id: 1,
-    name: 'Ultimate Pepperoni',
+    name: 'Pepperoni',
     image:
       'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/peperoni.png',
     price: 12.99
@@ -70,5 +70,3 @@ const products = [
     price: 13.29
   }
 ]
-
-export default products

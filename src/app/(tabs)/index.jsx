@@ -1,11 +1,14 @@
-import products from '#/data/products'
+import { products } from '#/constants/uidata/products'
 import { Card } from '@/components/Card'
-import { FlatList, StatusBar } from 'react-native'
+import { FlatList } from 'react-native'
 
 export default function HomeView() {
   return (
     <FlatList
-      style={{ marginTop: StatusBar.currentHeight }}
+      contentContainerStyle={{ gap: 10, padding: 10 }}
+      columnWrapperStyle={{ gap: 6 }}
+      showsVerticalScrollIndicator={false}
+      numColumns={2}
       data={products}
       renderItem={({ item, index }) => <Card key={index} product={item} />}
     />
